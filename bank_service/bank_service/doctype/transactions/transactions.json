@@ -8,8 +8,10 @@
   "from_account",
   "to_account",
   "transaction_type",
+  "vid",
   "amount",
-  "date"
+  "date",
+  "status"
  ],
  "fields": [
   {
@@ -41,13 +43,23 @@
    "fieldtype": "Link",
    "label": "To Account",
    "options": "Customer Accounts"
+  },
+  {
+   "fieldname": "vid",
+   "fieldtype": "Data",
+   "label": "VID"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-12 12:42:48.483482",
- "modified_by": "Administrator",    
+ "modified": "2025-08-18 18:40:19.863240",
+ "modified_by": "Administrator",
  "module": "bank_service",
  "name": "Transactions",
  "owner": "Administrator",

@@ -1,23 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:bank_account_no",
+ "autoname": "field:bank_account_number",
  "creation": "2025-08-12 12:16:55.514042",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "bank_account_no",
-  "account_name",
+  "bank_account_number",
+  "customer",
   "bank_name",
   "balance"
  ],
  "fields": [
-  {
-   "fetch_from": "account_no.first_name",
-   "fieldname": "account_name",
-   "fieldtype": "Data",
-   "label": "Account Name"
-  },
   {
    "fieldname": "bank_name",
    "fieldtype": "Data",
@@ -25,23 +19,30 @@
    "options": "HDFC"
   },
   {
+   "fetch_from": "bank_account_number.balance",
    "fieldname": "balance",
    "fieldtype": "Currency",
    "label": "Balance"
   },
   {
    "fetch_from": "account_name.account_no",
-   "fieldname": "bank_account_no",
+   "fieldname": "bank_account_number",
    "fieldtype": "Link",
    "label": "Bank account No",
    "options": "HDFC Customer",
    "unique": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-12 12:46:25.644903",
+ "modified": "2025-08-18 18:38:55.736099",
  "modified_by": "Administrator",
  "module": "bank_service",
  "name": "Customer Accounts",

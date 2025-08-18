@@ -7,21 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "account_name",
-  "phone",
-  "address",
-  "account_number"
+  "account_number",
+  "account_type",
+  "balance"
  ],
  "fields": [
-  {
-   "fieldname": "phone",
-   "fieldtype": "Data",
-   "label": "Phone"
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Data",
-   "label": "Address"
-  },
   {
    "fieldname": "account_name",
    "fieldtype": "Data",
@@ -32,12 +22,23 @@
    "fieldtype": "Data",
    "label": "Account No",
    "unique": 1
+  },
+  {
+   "fieldname": "account_type",
+   "fieldtype": "Select",
+   "label": "Account Type",
+   "options": "Savings\nCurrent"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-12 13:07:05.770817",
+ "modified": "2025-08-18 18:37:06.438917",
  "modified_by": "Administrator",
  "module": "bank_service",
  "name": "HDFC Customer",
