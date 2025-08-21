@@ -7,14 +7,19 @@
  "engine": "InnoDB",
  "field_order": [
   "account_name",
-  "account_number",
   "account_type",
-  "balance"
+  "phone",
+  "email",
+  "address",
+  "account_number",
+  "erpnext_bank_account",
+  "client_public_key"
  ],
  "fields": [
   {
    "fieldname": "account_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Account Name "
   },
   {
@@ -27,18 +32,44 @@
    "fieldname": "account_type",
    "fieldtype": "Select",
    "label": "Account Type",
-   "options": "Savings\nCurrent"
+   "options": "Savings\nCurrent",
+   "reqd": 1
   },
   {
-   "fieldname": "balance",
-   "fieldtype": "Currency",
-   "label": "Balance"
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "erpnext_bank_account",
+   "fieldtype": "Link",
+   "label": "ERPNext Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "client_public_key",
+   "fieldtype": "Text",
+   "label": "Client Public Key",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-18 18:37:06.438917",
+ "modified": "2025-08-21 11:15:04.847540",
  "modified_by": "Administrator",
  "module": "bank_service",
  "name": "HDFC Customer",

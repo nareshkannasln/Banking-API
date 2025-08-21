@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:transaction_id",
  "creation": "2025-08-11 12:35:25.476069",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,10 +9,11 @@
   "from_account",
   "to_account",
   "transaction_type",
-  "vid",
   "amount",
-  "date",
-  "status"
+  "status",
+  "date_time",
+  "transaction_id",
+  "remarks"
  ],
  "fields": [
   {
@@ -26,42 +28,50 @@
    "label": "Amount"
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
-   "fetch_from": "to_account.account_no",
+   "fetch_from": "to_account.account_number",
    "fieldname": "from_account",
    "fieldtype": "Link",
    "label": "From Account",
-   "options": "Customer Accounts"
+   "options": "HDFC Customer"
   },
   {
-   "fetch_from": "from_account.account_no",
+   "fetch_from": "from_account.account_number",
    "fieldname": "to_account",
    "fieldtype": "Link",
    "label": "To Account",
-   "options": "Customer Accounts"
-  },
-  {
-   "fieldname": "vid",
-   "fieldtype": "Data",
-   "label": "VID"
+   "options": "HDFC Customer"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Status"
+   "label": "Status",
+   "options": "Pending\nCompleted\nInitiated"
+  },
+  {
+   "fieldname": "date_time",
+   "fieldtype": "Datetime",
+   "label": "Date Time"
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "label": "Transaction ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-18 18:40:19.863240",
+ "modified": "2025-08-21 12:04:12.941287",
  "modified_by": "Administrator",
  "module": "bank_service",
  "name": "Transactions",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
